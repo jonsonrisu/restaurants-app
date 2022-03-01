@@ -1,47 +1,45 @@
-import './App.css';
-import './assets/css/style.css';
-import './assets/css/bootstrap.min.css';
-import './assets/lib/animate/animate.min.css';
-import './assets/lib/owlcarousel/assets/owl.carousel.min.css';
-import './assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css';
 
-import { Navbar } from './components/Navbar';
-import Spinner from './components/Spinner';
-import { Footer } from './components/Footer';
 
+import Spinner from './components/frontend/Spinner';
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-
-import Home from './components/Pages/Home';
-import About from './components/Pages/About';
-import Booking from './components/Pages/Booking';
-import Contact from './components/Pages/Contact';
-import { Menu } from './components/Pages/Menu';
-import Services from './components/Pages/Services';
-import TeamMember from './components/Pages/TeamMember';
-
+import Home from './components/frontend/Pages/Home/Home';
+import About from './components/frontend/Pages/About';
+import Booking from './components/frontend/Pages/Booking';
+import Contact from './components/frontend/Pages/Contact/Contact';
+import Menu  from './components/frontend/Pages/Menu';
+import Services from './components/frontend/Pages/Services';
+import TeamMember from './components/frontend/Pages/TeamMember';
+import Testimonial from './components/frontend/Pages/Testimoinal/Testimonial';
+import Dashboard from './components/admin/pages/Dashboard';
+import Login from './components/admin/auth/Login';
 function App() {
   return (
+    <>
     <div className="App container-xxl bg-white p-0">
-      <Spinner />
-      <div className="container-xxl position-relative p-0">
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route exact path={"/"} params={{ status:"active" }} element={<Home />} />
-            <Route exact path={"/home"} element={<Home />} />
-            <Route exact path="/services" element={<Services/>} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/contact" el ement={<Contact />} />
-            <Route path="/booking" element={<Booking />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/team" element={<TeamMember />} />
+    <Spinner />
+    <div className="container-xxl position-relative p-0">
+      <Router>
+        <Routes>
+          <Route exact path={"/"} params={{ status:"active" }} element={<Home />} />
+          <Route exact path={"/home"} element={<Home />} />
+          <Route exact path={"/services"} element={<Services/>} />
+          <Route exact path={"/about"} element={<About />} />
+          <Route exact path={"/contact"} element={<Contact />} />
+          <Route path={"/booking"} element={<Booking />} />
+          <Route path={"/menu"} element={<Menu />} />
+          <Route path={"/team"} element={<TeamMember />} />
+          <Route path={"/testimonial"} element={<Testimonial />} />
 
-          </Routes>
-        </Router>
-        <Footer/>
+          {/* Admin Routes */}
+          <Route path={"/admin/login"} element={<Login />} />
+          <Route path={"/admin/dashboard"} element={<Dashboard />} />
 
-      </div>
+        </Routes>
+      </Router>
     </div>
+  
+  </div>
+  </>
   );
 }
 

@@ -12,6 +12,11 @@ import TeamMember from './components/frontend/Pages/TeamMember';
 import Testimonial from './components/frontend/Pages/Testimoinal/Testimonial';
 import Dashboard from './components/admin/pages/Dashboard';
 import Login from './components/admin/auth/Login';
+import CategoryAdd from './components/admin/pages/Category/Add';
+import CategoryList from './components/admin/pages/Category/List';
+import ServicesAdd from './components/admin/pages/Services/Add';
+import ServicesList from './components/admin/pages/Services/List';
+
 function App() {
   return (
     <>
@@ -33,6 +38,11 @@ function App() {
           {/* Admin Routes */}
           <Route path={"/admin/login"} element={<Login />} />
           <Route path={"/admin/dashboard"} element={<Dashboard />} />
+          <Route path={"/admin/category/create"} element={<CategoryAdd />} />
+          <Route path={"/admin/category"} element={<CategoryList />} />
+          <Route path={"/admin/services/create"} element={<ServicesAdd />} />
+          <Route path={"/admin/services"} element={<ServicesList />} />
+
 
         </Routes>
       </Router>

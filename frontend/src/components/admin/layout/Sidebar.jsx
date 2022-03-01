@@ -19,26 +19,26 @@ const Sidebar = () => {
                     </div>
                 </div>
                 <div className="navbar-nav w-100">
-                    <a href="/admin/dashboar" className="nav-item nav-link active"><i className="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/admin/dashboard" className="nav-item nav-link active"><i className="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div className="nav-item dropdown">
-                        <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="fa fa-laptop me-2"></i>Elements</a>
+                        <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="fa fa-laptop me-2"></i>Categories</a>
                         <div className="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" className="dropdown-item">Buttons</a>
-                            <a href="typography.html" className="dropdown-item">Typography</a>
-                            <a href="element.html" className="dropdown-item">Other Elements</a>
+                            <a href="/admin/category" className="dropdown-item mx-2"><i className="fa fa-list me-2"></i>List</a>
+                            <a href="/admin/category/create" className="dropdown-item mx-2"><i className="fa fa-plus me-2"></i>Add</a>
                         </div>
                     </div>
-                    <a href="widget.html" className="nav-item nav-link"><i className="fa fa-th me-2"></i>Widgets</a>
-                    <a href="form.html" className="nav-item nav-link"><i className="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="table.html" className="nav-item nav-link"><i className="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" className="nav-item nav-link"><i className="fa fa-chart-bar me-2"></i>Charts</a>
                     <div className="nav-item dropdown">
-                        <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="far fa-file-alt me-2"></i>Pages</a>
+                        <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="fa fa-wrench me-2"></i>Services</a>
                         <div className="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" className="dropdown-item">Sign In</a>
-                            <a href="signup.html" className="dropdown-item">Sign Up</a>
-                            <a href="404.html" className="dropdown-item">404 Error</a>
-                            <a href="blank.html" className="dropdown-item">Blank Page</a>
+                            <a href="/admin/services" className="dropdown-item mx-2"><i className="fa fa-list me-2"></i>List</a>
+                            <a href="/admin/services/create" className="dropdown-item mx-2"><i className="fa fa-plus me-2"></i>Add</a>
+                        </div>
+                    </div>
+                    <div className="nav-item dropdown">
+                        <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="fa fa-th me-2"></i>Products</a>
+                        <div className="dropdown-menu bg-transparent border-0">
+                            <a href="/admin/products" className="dropdown-item mx-2"><i className="fa fa-list me-2"></i>List</a>
+                            <a href="/admin/products/create" className="dropdown-item mx-2"><i className="fa fa-plus me-2"></i>Add</a>
                         </div>
                     </div>
                 </div>

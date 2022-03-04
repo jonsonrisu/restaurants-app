@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from "react";
+import ValidatedLoginForm from "./ValidatedLoginForm";
 const Login = () => {
   return (
     <div className="container-fluid">
@@ -12,16 +12,9 @@ const Login = () => {
                     </a>
                     <h3>Login In</h3>
                 </div>
-                <div className="form-floating mb-3">
-                    <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
-                    <label forhtml="floatingInput">Email address</label>
-                </div>
-                <div className="form-floating mb-4">
-                    <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
-                    <label forhtml="floatingPassword">Password</label>
-                </div>
-                <button type="submit" className="btn btn-primary py-3 w-100 mb-4">Sign In</button>
+                <ValidatedLoginForm />
             </div>
+        
         </div>
     </div>
 </div>

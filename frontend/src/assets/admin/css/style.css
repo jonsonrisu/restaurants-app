@@ -275,3 +275,13 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+
+input.error {
+    border-color: red;
+  }
+  
+.input-feedback {
+color: rgb(235, 54, 54);
+font-size: 16px;
+}

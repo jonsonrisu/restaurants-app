@@ -15,6 +15,7 @@ import CategoryAdd from './components/admin/pages/Category/Add';
 import CategoryList from './components/admin/pages/Category/List';
 import ServicesAdd from './components/admin/pages/Services/Add';
 import ServicesList from './components/admin/pages/Services/List';
+import PageNotFound from "./components/frontend/Pages/404-page";
 
 function App() {
   let islogin = false;
@@ -52,12 +53,12 @@ function App() {
               <Route element={<PrivateWrapper auth={{ isAuthenticated: islogin }} />}>
                 <Route exact path={"/admin/dashboard"} element={<Dashboard />} />
                 <Route exact path={"/admin/category/create"} element={<CategoryAdd />} />
-                <Route exact path={"/admin/category"} ele ment={<CategoryList />} />
+                <Route exact path={"/admin/category"} element={<CategoryList />} />
                 <Route exact path={"/admin/services/create"} element={<ServicesAdd />} />
                 <Route exact path={"/admin/services"} element={<ServicesList />} />
-
               </Route>
               {/* End Private Route */}
+              <Route path="/*" element={<PageNotFound/>} />
             </Routes>
           </Router>
         </div>

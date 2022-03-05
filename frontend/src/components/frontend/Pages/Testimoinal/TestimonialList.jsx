@@ -17,7 +17,7 @@ const TestimonialList = () => {
                         <i className="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div className="d-flex align-items-center">
-                            <img className="img-fluid flex-shrink-0 rounded-circle" src={testimonial1} style={{width: "50px", height: "50px"}} />
+                            <img className="img-fluid flex-shrink-0 rounded-circle" src={testimonial1} style={{width: "50px", height: "50px"}} alt="t1" />
                             <div className="ps-3">
                                 <h5 className="mb-1">Client Name</h5>
                                 <small>Profession</small>
@@ -28,7 +28,7 @@ const TestimonialList = () => {
                         <i className="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div className="d-flex align-items-center">
-                            <img className="img-fluid flex-shrink-0 rounded-circle" src={testimonial2} style={{width: "50px", height: "50px"}} />
+                            <img className="img-fluid flex-shrink-0 rounded-circle" src={testimonial2} style={{width: "50px", height: "50px"}} alt="t2" />
                             <div className="ps-3">
                                 <h5 className="mb-1">Client Name</h5>
                                 <small>Profession</small>
@@ -39,7 +39,7 @@ const TestimonialList = () => {
                         <i className="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div className="d-flex align-items-center">
-                            <img className="img-fluid flex-shrink-0 rounded-circle" src={testimonial3} style={{width: "50px", height: "50px"}} />
+                            <img className="img-fluid flex-shrink-0 rounded-circle" src={testimonial3} style={{width: "50px", height: "50px"}} alt="t3" />
                             <div className="ps-3">
                                 <h5 className="mb-1">Client Name</h5>
                                 <small>Profession</small>
@@ -50,7 +50,7 @@ const TestimonialList = () => {
                         <i className="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div className="d-flex align-items-center">
-                            <img className="img-fluid flex-shrink-0 rounded-circle" src={testimonial4} style={{width: "50px", height: "50px"}} />
+                            <img className="img-fluid flex-shrink-0 rounded-circle" src={testimonial4} style={{width: "50px", height: "50px"}} alt="t4" />
                             <div className="ps-3">
                                 <h5 className="mb-1">Client Name</h5>
                                 <small>Profession</small>

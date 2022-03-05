@@ -1,26 +1,39 @@
-const Category = require('../models/Category')
+const multer = require('multer');
+const { category } = require('../models');
+const db = require("../models");
+const Category = db.category;
 
-exports.findAll = function (req, res) {
-    Category.findAll(function (err, category) {
-        if (err)
-            res.send(err);
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './uploads/category');
+    },
+    filename: function (req, file, cb) {
+        cb(null, `${Date.now()}-category-${file.originalname}`);
+    }
+});
+
+exports.uploadImg = multer({ storage: storage }).single('image');
+
+exports.findAll = async function (req, res) {
+  await Category.findAll({
+    }).then(category => {
         res.send(category);
-    });
+    }).catch(err => {
+        res.status(500).send({ message: err.message });
+    });;
 };
 
-exports.create = function (req, res) {
-
-    const new_category = new Category(req.body);
-    //handles null error
-    if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
-        res.status(400).send({ error: true, message: 'Please provide all required field' });
-    } else {
-        User.create(new_category, function (err, category) {
-            if (err)
-                res.send(err);
-            res.json({ error: false, message: "Category added successfully!", data: category });
-        });
+exports.addCategory = async function (req, res) {
+await Category.create(
+    {
+        name: req.body.name,
+        keywords: req.body.keywords,
+        image: req.file.path,  //update this
+        status :req.body.status ? req.body.status : 0
     }
+).then(category => {
+      res.send({error:false, message: "Category added successfully." });
+    });
 };
 
 

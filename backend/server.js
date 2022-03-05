@@ -12,6 +12,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/uploads', express.static('./uploads'));
 
 // db.sequelize.sync({force: true}).then(() => {
 //     console.log('Drop and Resync Db');
@@ -34,7 +35,7 @@ app.get('/', (req, res) => {
     res.send({"message":"Welcome to Restoran"});
 });
 
-const Routes = require('./app/routes/routes')(app);
+require('./app/routes/routes')(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;

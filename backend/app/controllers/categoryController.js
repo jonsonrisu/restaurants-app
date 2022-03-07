@@ -24,6 +24,7 @@ exports.findAll = async function (req, res) {
 };
 
 exports.addCategory = async function (req, res) {
+    console.log(req.body);
 await Category.create(
     {
         name: req.body.name,

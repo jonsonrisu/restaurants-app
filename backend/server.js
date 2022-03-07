@@ -3,10 +3,10 @@ const cors = require("cors");
 const app = express();
 const db = require("./app/models");
 const Role = db.role;
-var corsOptions = { 
-  origin: "http://localhost:8081"
-};
-app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: '*'
+}));
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded

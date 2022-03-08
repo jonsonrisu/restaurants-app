@@ -11,10 +11,18 @@ import TeamMember from './components/frontend/Pages/TeamMember';
 import Testimonial from './components/frontend/Pages/Testimoinal/Testimonial';
 import Dashboard from './components/admin/pages/Dashboard';
 import Login from './components/admin/auth/Login';
+
 import CategoryAdd from './components/admin/pages/Category/Add';
+import CategoryEdit from './components/admin/pages/Category/Edit';
 import CategoryList from './components/admin/pages/Category/List';
+
 import ServicesAdd from './components/admin/pages/Services/Add';
 import ServicesList from './components/admin/pages/Services/List';
+
+import AddProduct from './components/admin/pages/Product/Add';
+import ProductList from './components/admin/pages/Product/List';
+
+
 import PageNotFound from "./components/frontend/Pages/404-page";
 
 function App() {
@@ -53,9 +61,12 @@ function App() {
               <Route element={<PrivateWrapper auth={{ isAuthenticated: islogin }} />}>
                 <Route exact path={"/admin/dashboard"} element={<Dashboard />} />
                 <Route exact path={"/admin/category/create"} element={<CategoryAdd />} />
+                <Route exact path={"/admin/category/:id"} element={<CategoryEdit />} />
                 <Route exact path={"/admin/category"} element={<CategoryList />} />
                 <Route exact path={"/admin/services/create"} element={<ServicesAdd />} />
                 <Route exact path={"/admin/services"} element={<ServicesList />} />
+                <Route exact path={"/admin/products/create"} element={<AddProduct />} />
+                <Route exact path={"/admin/products"} element={<ProductList />} />
               </Route>
               {/* End Private Route */}
               <Route path="/*" element={<PageNotFound/>} />

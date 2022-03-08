@@ -3,6 +3,7 @@ const upload = multer();
 const { verifySignUp } = require("../middleware");
 const categoryController =   require('../controllers/categoryController');
 const authController =   require('../controllers/authController');
+const servicesController =require('../controllers/servicesController');
 const { addCategoryValidation } = require('../Validation/validation');
 
 module.exports = function (app) {
@@ -17,12 +18,21 @@ module.exports = function (app) {
 
 const router = require("express").Router();
 
-router.post("/auth/signup", [ verifySignUp.checkDuplicateUsernameOrEmail,verifySignUp.checkRolesExisted],
+
+ //auth
+ router.post("/auth/signup", [ verifySignUp.checkDuplicateUsernameOrEmail,verifySignUp.checkRolesExisted],
     authController.signup
   );
   router.post("/auth/signin", authController.signin);
+
+  //category
   router.get("/category/list", categoryController.findAll);
   router.post("/category/create", [addCategoryValidation],categoryController.uploadImg, categoryController.addCategory);
+
+  //services 
+  router.get("/services/list", servicesController.findAll);
+  router.post("/services/create",servicesController.addServices);
+
 
   app.use('/api',router);
 

@@ -1,7 +1,7 @@
 export default function validate(values,fileData) {
     let errors = {};
     if (!values.name) {
-      errors.name = 'Name is required';
+      errors.name = 'Name is required.';
     }  else if (values.name.length < 3) {
       errors.name = 'Name must be 3 characters.';
     }
@@ -14,7 +14,7 @@ export default function validate(values,fileData) {
     if(!fileData){
         errors.image = "Image is required.";
     }
-     else if (!fileData.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+     else if (!fileData.name.match(/\.(jpg|jpeg|png|PNG|gif)$/)) {
         errors.image ='Please select valid image.';
     }
     return errors;

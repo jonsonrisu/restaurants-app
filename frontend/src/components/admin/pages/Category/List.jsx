@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import adminLayout from '../../layout/Layout'
 import CategorySevices from '../../../../services/CategoryServices'
-
+import  {NavLink }  from "react-router-dom";
 const CategoryList = () => {
     const [category, setCategory] = useState([]);
     const imgUrl = "http://localhost:3000/";
@@ -29,6 +29,9 @@ const CategoryList = () => {
                 <div className="row g-4"></div>
                 <div className="col-12">
                     <div className="bg-light rounded h-100 p-4">
+                        <div>
+                        <NavLink to="/admin/category/create" className="btn btn-primary btn-sm" style={{float: "right"}}>Add</NavLink>
+                        </div>
                         <h6 className="mb-4">Category List</h6>
                         <div className="table-responsive">
                             <table className="table">
@@ -51,7 +54,7 @@ const CategoryList = () => {
                                             <td><img src={imgUrl + cate.image} alt={cate.name} srcset="" height={50} width={100} /></td>
                                             <td>{cate.status == 1 ? <div className="p-2 bg-success text-white" style={{textAlign:"center"}}>Active</div> : <div className="p-2 bg-danger text-white" style={{textAlign:"center"}}>Inactive</div>}</td>
                                             <td>
-                                                <a href="" className='btn btn-primary sm mx-2'><i className='fa fa-edit'></i></a>
+                                                <NavLink to={cate.id} className='btn btn-primary sm mx-2'><i className='fa fa-edit'></i></NavLink>
                                                 <button className='btn btn-danger sm'><i className='fa fa-trash'></i></button>
                                             </td>
                                         </tr>

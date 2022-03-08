@@ -5,7 +5,7 @@ import useForm from '../../../common/Validation';
 import validate from './addCategoryRules';
 import  {NavLink }  from "react-router-dom";
 
-const CategoryAdd = () => {
+const CategoryEdit = () => {
 
     const { values, file, errors, handleChange, handleUpload, handleSubmit } = useForm(addCategory, validate);
     const [successful, setSuccessful] = useState(false);
@@ -102,4 +102,4 @@ const CategoryAdd = () => {
     )
 }
 
-export default adminLayout(CategoryAdd)
+export default adminLayout(CategoryEdit)

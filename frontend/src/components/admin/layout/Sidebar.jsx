@@ -45,7 +45,7 @@ const Sidebar = () => {
                         </div>
                     </div>
                     <div className="nav-item dropdown">
-                        <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="fa fa-th me-2"></i>Products</a>
+                        <NavLink to="/admin/products" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="fa fa-th me-2"></i>Products</NavLink>
                         <div className="dropdown-menu bg-transparent border-0">
                         <NavLink to="/admin/products" className="dropdown-item mx-2"><i className="fa fa-list me-2"></i>List</NavLink>
                         <NavLink to="/admin/products/create" className="dropdown-item mx-2"><i className="fa fa-plus me-2"></i>Add</NavLink>

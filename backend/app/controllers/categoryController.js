@@ -1,5 +1,4 @@
 const multer = require('multer');
-const { category } = require('../models');
 const db = require("../models");
 const Category = db.category;
 
@@ -24,7 +23,6 @@ exports.findAll = async function (req, res) {
 };
 
 exports.addCategory = async function (req, res) {
-    console.log(req.body);
 await Category.create(
     {
         name: req.body.name,
